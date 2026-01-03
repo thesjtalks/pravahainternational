@@ -84,4 +84,77 @@ document.addEventListener('DOMContentLoaded', () => {
         slideInterval = setInterval(nextSlide, intervalTime);
     }
 
+    /* -------------------------------------------------------------------------- */
+    /*                                  IST Clock                                 */
+    /* -------------------------------------------------------------------------- */
+    function updateISTTime() {
+        const istTimeElement = document.getElementById('ist-time');
+        if (istTimeElement) {
+            const now = new Date();
+            // Convert to IST (UTC + 5:30)
+            const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+            const istOffset = 5.5 * 60 * 60 * 1000;
+            const istDate = new Date(utc + istOffset);
+
+            let hours = istDate.getHours();
+            const minutes = istDate.getMinutes();
+            const seconds = istDate.getSeconds(); // Add seconds
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            const minutesStr = minutes < 10 ? '0' + minutes : minutes;
+            const secondsStr = seconds < 10 ? '0' + seconds : seconds; // Format seconds
+
+            const timeString = `${hours}:${minutesStr}:${secondsStr} ${ampm} IST`; // Display with seconds
+            istTimeElement.textContent = timeString;
+        }
+    }
+
+    // Update immediately and then every second
+    updateISTTime();
+    setInterval(updateISTTime, 1000);
+
+    /* -------------------------------------------------------------------------- */
+    /*                                 Contact Form                               */
+    /* -------------------------------------------------------------------------- */
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+
+            // Simple loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            fetch('send_email.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(result => {
+                    alert(result.message); // Show simple feedback
+                    if (result.status === 'success') {
+                        contactForm.reset();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('There was an error sending your message. Please try again later.');
+                })
+                .finally(() => {
+                    submitBtn.textContent = originalBtnText;
+                    submitBtn.disabled = false;
+                });
+        });
+    }
+
 });

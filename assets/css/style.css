@@ -6,10 +6,10 @@
     /* European Corporate Palette */
     --primary-color: #0a192f;
     /* Deep Navy */
-    --secondary-color: #d4af37;
-    /* Premium Gold/Copper */
-    --accent-color: #e74c3c;
-    /* Muted Red for subtle highlights */
+    --secondary-color: #333333;
+    /* Dark Gray for high contrast */
+    --accent-color: #666666;
+    /* Medium Gray for subtle highlights */
 
     --text-dark: #2c3e50;
     /* Charcoal for Body Text */
@@ -21,7 +21,7 @@
     --bg-dark: #0a192f;
 
     /* Typography */
-    --font-main: 'Source Sans Pro', sans-serif;
+    --font-main: 'Bricolage Grotesque', sans-serif;
 
     /* Spacing & Layout */
     --container-width: 1200px;
@@ -133,7 +133,7 @@ img {
 }
 
 .btn-primary:hover {
-    background-color: transparent;
+    background-color: var(--white);
     color: var(--secondary-color);
 }
 
@@ -161,6 +161,25 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: nowrap;
+    /* Prevent wrapping */
+}
+
+.top-center {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.top-center .divider {
+    opacity: 0.5;
+}
+
+.top-center i {
+    margin-right: 5px;
+    color: var(--white);
 }
 
 .top-left a,
@@ -171,9 +190,17 @@ img {
     font-weight: 400;
 }
 
+.top-right {
+    white-space: nowrap;
+    /* Ensure content stays on one line */
+    display: flex;
+    align-items: center;
+}
+
 .top-left a:hover,
 .top-right a:hover {
-    color: var(--secondary-color);
+    color: var(--white);
+    text-decoration: underline;
 }
 
 .social-icons {
@@ -181,6 +208,100 @@ img {
     margin-left: 15px;
     padding-left: 15px;
     border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Google Translate Styling */
+/* Google Translate Styling - Ultra Simple Inline */
+#google_translate_element {
+    display: inline-block !important;
+    margin-left: 15px;
+}
+
+
+
+.goog-te-gadget-simple {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    font-family: var(--font-main) !important;
+    font-size: 0.9rem !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+}
+
+.goog-te-gadget-simple * {
+    color: #ffffff !important;
+    font-size: 0.9rem !important;
+    font-family: var(--font-main) !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+.goog-te-gadget-icon,
+.goog-logo-link {
+    display: none !important;
+}
+
+.goog-te-gadget {
+    color: transparent !important;
+    display: inline !important;
+    width: auto !important;
+}
+
+/* Force the widget parent to not wrap and have no width constraint */
+.goog-te-gadget>div,
+.goog-te-gadget span,
+.goog-te-gadget-simple>span,
+.goog-te-gadget-simple a {
+    display: inline !important;
+    white-space: nowrap !important;
+    width: auto !important;
+}
+
+/* Target Google's internal anchor class - this is the key fix */
+.VIpgJd-ZVi9od-xl07Ob-lTBxed {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Style children of the anchor to be inline-block */
+.VIpgJd-ZVi9od-xl07Ob-lTBxed span,
+.VIpgJd-ZVi9od-xl07Ob-lTBxed img {
+    display: inline-block !important;
+    vertical-align: middle !important;
+    margin: 0 2px !important;
+    position: static !important;
+    height: auto !important;
+}
+
+/* Make gadget-simple use inline-flex */
+.goog-te-gadget-simple {
+    display: inline-flex !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+/* Constrain the dropdown menu width */
+.goog-te-menu-frame {
+    max-width: 300px !important;
+    max-height: 400px !important;
+}
+
+
+
+/* Ensure the iframe doesn't expand too wide */
+body>.skiptranslate>iframe.goog-te-menu-frame {
+    max-width: 300px !important;
+    max-height: 400px !important;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -339,15 +460,32 @@ img {
 }
 
 /* -------------------------------------------------------------------------- */
+/*                                Section Headers                             */
+/* -------------------------------------------------------------------------- */
+.section-header {
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-header h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    color: var(--primary-color);
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* -------------------------------------------------------------------------- */
 /*                                About Section                               */
 /* -------------------------------------------------------------------------- */
-.sub-heading {
-    color: var(--secondary-color);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-}
 
 .align-center {
     display: flex;
@@ -355,13 +493,16 @@ img {
     gap: 50px;
 }
 
+
 .col-half {
     flex: 1;
 }
 
 .text-col h2 {
-    font-size: 3rem;
-    margin-bottom: 30px;
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+    line-height: 1.2;
 }
 
 .text-col p {
@@ -373,8 +514,12 @@ img {
 .about-img {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    transform: scale(1.07);
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                Services Grid                               */
+/* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 /*                                Services Grid                               */
 /* -------------------------------------------------------------------------- */
@@ -385,32 +530,23 @@ img {
     margin-top: 50px;
 }
 
-.service-card {
-    background: var(--white);
-    padding: 40px 30px;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    text-align: center;
-    transition: var(--transition);
-    border-bottom: 3px solid transparent;
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
 }
 
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-hover);
-    border-bottom-color: var(--secondary-color);
+.sub-desc {
+    font-size: 0.95rem;
+    /* Smaller than standard 1.1rem */
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    color: var(--text-light);
+    line-height: 1.6;
 }
 
-.service-card i {
-    font-size: 3rem;
-    color: var(--secondary-color);
-    margin-bottom: 25px;
-}
 
-.service-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
 
 /* -------------------------------------------------------------------------- */
 /*                                 Flip Cards                                 */
@@ -418,7 +554,8 @@ img {
 .flip-card {
     background-color: transparent;
     perspective: 1000px;
-    height: 400px;
+    height: 350px;
+    /* Reduced height for service cards */
 }
 
 .flip-card-inner {
@@ -445,6 +582,13 @@ img {
     backface-visibility: hidden;
     border-radius: var(--radius);
     overflow: hidden;
+    padding: 30px;
+    /* Added padding for content spacing */
+    display: flex;
+    /* Flexbox for centering back content */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .flip-card-front {
@@ -455,6 +599,29 @@ img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    position: absolute;
+    /* Revert to absolute for Image cards */
+    top: 0;
+    left: 0;
+    padding: 0;
+    /* Remove padding for image cards */
+}
+
+.flip-card-back {
+    background-color: var(--primary-color);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-card-back h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.flip-card-back p {
+    font-size: 1rem;
+    margin-bottom: 20px;
 }
 
 .overlay-text {
@@ -534,10 +701,13 @@ img {
 }
 
 .why-list i {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: var(--secondary-color);
     margin-right: 20px;
-    margin-top: 5px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    width: 3rem;
+    text-align: center;
 }
 
 .why-list h5 {
@@ -560,22 +730,38 @@ img {
 
 .marquee-track {
     display: flex;
-    width: 200%;
-    animation: marquee 20s linear infinite;
+    width: max-content;
+    animation: marquee 50s linear infinite;
+    margin-top: 60px;
 }
 
 .marquee-content {
     display: flex;
-    justify-content: space-around;
-    width: 50%;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 100px;
+    padding: 0 50px;
 }
 
-.marquee-content span {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-light);
-    opacity: 0.5;
-    white-space: nowrap;
+.marquee-content img {
+    height: 175px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.8);
+    transition: var(--transition);
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.marquee-content img:hover {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.15);
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
 }
 
 @keyframes marquee {
@@ -598,7 +784,7 @@ img {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    grid-template-columns: 2fr 1fr 1.5fr;
     gap: 40px;
     margin-bottom: 50px;
 }
@@ -648,6 +834,111 @@ img {
     font-size: 0.9rem;
 }
 
+
+/* -------------------------------------------------------------------------- */
+/*                                 Contact Us                                 */
+/* -------------------------------------------------------------------------- */
+.contact-wrapper {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.contact-info-card {
+    flex: 1;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 50px 40px;
+}
+
+.contact-info-card h3 {
+    color: var(--white);
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.contact-info-card p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 40px;
+}
+
+.contact-details li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.contact-details i {
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-right: 20px;
+    margin-top: 5px;
+    width: 20px;
+    /* alignment */
+    text-align: center;
+}
+
+.contact-details h5 {
+    color: var(--white);
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.contact-details p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+.contact-form-card {
+    flex: 1.5;
+    padding: 50px 40px;
+    background-color: var(--white);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(10, 25, 47, 0.1);
+}
+
+.full-width {
+    width: 100%;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                Responsive                                  */
 /* -------------------------------------------------------------------------- */
@@ -656,7 +947,9 @@ img {
     .grid-3,
     .gallery-grid,
     .footer-grid,
-    .align-center {
+    .align-center,
+    .contact-wrapper,
+    .form-grid {
         grid-template-columns: 1fr;
         flex-direction: column;
     }

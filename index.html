@@ -5,9 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pravaha International - Premium Export & Import Services</title>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap"
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -17,17 +21,17 @@
     <div class="top-bar">
         <div class="container">
             <div class="top-left">
-                <a href="tel:+911234567890"><i class="fas fa-phone-alt"></i> +91 123 456 7890</a>
+                <a href="tel:+91-87359-18360"><i class="fas fa-phone-alt"></i> +91-87359-18360</a>
                 <a href="mailto:info@pravahainternational.com"><i class="fas fa-envelope"></i>
                     info@pravahainternational.com</a>
             </div>
+            <div class="top-center">
+                <span><i class="fas fa-clock"></i> 9:00 AM - 7:00 PM IST</span>
+                <span class="divider">|</span>
+                <span id="ist-time"></span>
+            </div>
             <div class="top-right">
-                <span><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 6:00 PM</span>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
+                <div id="google_translate_element"></div>
             </div>
         </div>
     </div>
@@ -35,7 +39,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container flex-nav">
-            <a href="#" class="logo">PRAVAHA<span class="dot">.</span></a>
+            <a href="#" class="logo">Pravaha International</a>
             <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -53,11 +57,10 @@
         <div class="carousel-track">
             <!-- Slide 1 -->
             <div class="slide active">
-                <img src="https://placehold.co/1920x1080/0a192f/ffffff?text=Global+Logistics+Excellence"
-                    alt="Global Logistics">
+                <img src="assets/images/heroslider1.jpg" alt="Global Logistics">
                 <div class="carousel-content">
                     <div class="container">
-                        <h1>Connecting Markets.<br> delivering Trust.</h1>
+                        <h1>Connecting Markets.<br> Delivering Trust.</h1>
                         <p>Your premier partner for international trade and supply chain solutions.</p>
                         <a href="#services" class="btn btn-primary">Our Services</a>
                     </div>
@@ -65,13 +68,56 @@
             </div>
             <!-- Slide 2 -->
             <div class="slide">
-                <img src="https://placehold.co/1920x1080/d4af37/ffffff?text=Premium+Quality+Exports"
-                    alt="Premium Exports">
+                <img src="assets/images/heroslider2.jpeg" alt="Premium Quality">
                 <div class="carousel-content">
                     <div class="container">
                         <h1>Premium Quality.<br> Global Standards.</h1>
                         <p>Exporting the finest goods to clients worldwide with unmatched reliability.</p>
                         <a href="#products" class="btn btn-primary">Explore Products</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide">
+                <img src="assets/images/heroslider3.jpg" alt="Sustainable Sourcing">
+                <div class="carousel-content">
+                    <div class="container">
+                        <h1>Authentic Spices.<br> Rich Flavors.</h1>
+                        <p>Directly sourced from Indian farms to your doorstep.</p>
+                        <a href="#products" class="btn btn-primary">View Spices</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="slide">
+                <img src="assets/images/heroslider4.jpg" alt="Textile Excellence">
+                <div class="carousel-content">
+                    <div class="container">
+                        <h1>Textile Excellence.<br> Finest Fabrics.</h1>
+                        <p>A wide range of premium cotton and silk textiles for global markets.</p>
+                        <a href="#products" class="btn btn-primary">View Textiles</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 5 -->
+            <div class="slide">
+                <img src="assets/images/heroslider5.jpg" alt="Global Network">
+                <div class="carousel-content">
+                    <div class="container">
+                        <h1>Seamless Logistics.<br> Worldwide Reach.</h1>
+                        <p>Efficient air and ocean freight solutions for timely deliveries.</p>
+                        <a href="#services" class="btn btn-primary">Our Network</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 6 -->
+            <div class="slide">
+                <img src="assets/images/heroslider6.jpg" alt="Trusted Partnership">
+                <div class="carousel-content">
+                    <div class="container">
+                        <h1>Building Trust.<br> Long-term Value.</h1>
+                        <p>Committed to transparent trade and lasting business relationships.</p>
+                        <a href="#contact" class="btn btn-primary">Partner With Us</a>
                     </div>
                 </div>
             </div>
@@ -85,21 +131,23 @@
     <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
+            <div class="section-header text-center">
+                <h2>About Pravaha International</h2>
+            </div>
             <div class="row align-center">
                 <div class="col-half text-col">
-                    <h4 class="sub-heading">Who We Are</h4>
-                    <h2>A Legacy of Trade Excellence</h2>
-                    <p>Pravaha International is a leading export-import firm dedicated to bridging the gap between
-                        quality manufacturers and global markets. With a focus on transparency, efficiency, and
-                        reliability, we ensure that every shipment reaches its destination on time and in perfect
-                        condition.</p>
-                    <p>Our roots in the industry run deep, allowing us to source the finest products at competitive
-                        prices.</p>
-                    <a href="#about" class="btn btn-primary mt-4">Read More</a>
+                    <p>Pravaha International is an India-based export company supplying premium spices and textiles to
+                        global markets. Rooted in India’s heritage and guided by modern trade practices, we connect
+                        trusted producers with buyers worldwide.</p>
+                    <p>With a focus on quality, consistency, and ethical sourcing, every product meets international
+                        standards. Our streamlined supply chain, transparent processes, and customer-first approach
+                        enable seamless trade.</p>
+                    <p>We export not just products, but trust, authenticity, and lasting value across diverse industries
+                        and international partnerships globally.</p>
+
                 </div>
                 <div class="col-half img-col">
-                    <img src="https://placehold.co/800x600/0a192f/f8f9fa?text=About+Us" alt="About Us"
-                        class="about-img">
+                    <img src="assets/images/aboutus.gif" alt="About Us" class="about-img">
                 </div>
             </div>
         </div>
@@ -109,24 +157,68 @@
     <section id="services" class="section bg-light">
         <div class="container">
             <div class="section-header text-center">
-                <h4 class="sub-heading">Our Expertise</h4>
-                <h2>Comprehensive Logistics Solutions</h2>
+                <h2>Our Services</h2>
             </div>
-            <div class="grid-3 services-grid">
-                <div class="service-card">
-                    <i class="fas fa-plane"></i>
-                    <h3>Air Freight</h3>
-                    <p>Rapid and secure air transport for time-sensitive production.</p>
+            <div class="grid-4 services-grid">
+                <!-- Service 1 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="assets/images/aircargo.jpg" alt="Air Freight">
+                            <div class="overlay-text">
+                                <h3>Air Freight</h3>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Air Freight</h3>
+                            <p>Rapid and secure air transport for time-sensitive production.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-ship"></i>
-                    <h3>Ocean Freight</h3>
-                    <p>Cost-effective global shipping for bulk commodities.</p>
+                <!-- Service 2 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="assets/images/watertransport.jpg" alt="Ocean Freight">
+                            <div class="overlay-text">
+                                <h3>Ocean Freight</h3>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Ocean Freight</h3>
+                            <p>Cost-effective global shipping for bulk commodities.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-warehouse"></i>
-                    <h3>Warehousing</h3>
-                    <p>Secure storage solutions with inventory management.</p>
+                <!-- Service 3 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="assets/images/trucktransport.jpg" alt="Road Transport">
+                            <div class="overlay-text">
+                                <h3>Road Transport</h3>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Road Transport</h3>
+                            <p>Efficient inland logistics ensuring seamless last-mile connectivity.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="assets/images/warehouse.jpg" alt="Warehousing">
+                            <div class="overlay-text">
+                                <h3>Warehousing</h3>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Warehousing</h3>
+                            <p>Secure storage solutions with inventory management.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -136,7 +228,7 @@
     <section id="products" class="section">
         <div class="container">
             <div class="section-header text-center">
-                <h4 class="sub-heading">What We Export</h4>
+
                 <h2>Premium Product Categories</h2>
             </div>
             <div class="grid-3 flip-grid">
@@ -144,7 +236,7 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="https://placehold.co/600x800/2c3e50/ffffff?text=Textiles" alt="Textiles">
+                            <img src="assets/images/textileproduct.jpg" alt="Textiles">
                             <div class="overlay-text">
                                 <h3>Textiles</h3>
                             </div>
@@ -160,7 +252,7 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="https://placehold.co/600x800/d4af37/ffffff?text=Spices" alt="Spices">
+                            <img src="assets/images/spicesproduct.jpg" alt="Spices">
                             <div class="overlay-text">
                                 <h3>Spices</h3>
                             </div>
@@ -176,7 +268,7 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="https://placehold.co/600x800/e74c3c/ffffff?text=Handicrafts" alt="Handicrafts">
+                            <img src="assets/images/handicraftproduct.jpg" alt="Handicrafts">
                             <div class="overlay-text">
                                 <h3>Handicrafts</h3>
                             </div>
@@ -193,10 +285,11 @@
     </section>
 
     <!-- Business Gallery -->
+    <!--
     <section id="gallery" class="section bg-light">
         <div class="container">
             <div class="section-header text-center">
-                <h4 class="sub-heading">Gallery</h4>
+
                 <h2>Our Business in Action</h2>
             </div>
             <div class="gallery-grid">
@@ -211,38 +304,42 @@
             </div>
         </div>
     </section>
+    -->
 
     <!-- Why Choose Us -->
     <section class="section">
         <div class="container">
+            <div class="section-header text-center">
+                <h2>Why Choose Us</h2>
+            </div>
             <div class="row align-center">
                 <div class="col-half">
-                    <img src="https://placehold.co/800x600/0a192f/d4af37?text=Why+Choose+Us" alt="Why Choose Us"
-                        class="why-img">
+                    <img src="assets/images/whochooseus.gif" alt="Why Choose Us" class="why-img">
                 </div>
                 <div class="col-half">
-                    <h4 class="sub-heading">Why Choose Us</h4>
-                    <h2>Partnering for Success</h2>
                     <ul class="why-list">
                         <li>
-                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-shipping-fast"></i>
                             <div>
-                                <h5>Global Network</h5>
-                                <p>Access to markets in over 50 countries.</p>
+                                <h5>Reliable & Timely Deliveries</h5>
+                                <p>Strong logistics partnerships ensure on-time dispatch and consistent supply across
+                                    global markets.</p>
                             </div>
                         </li>
                         <li>
-                            <i class="fas fa-certificate"></i>
+                            <i class="fas fa-boxes"></i>
                             <div>
-                                <h5>Certified Quality</h5>
-                                <p>ISO 9001:2015 certified processes.</p>
+                                <h5>Flexible Order Capabilities</h5>
+                                <p>We support customized packaging, private labeling, and scalable order volumes to meet
+                                    diverse buyer requirements.</p>
                             </div>
                         </li>
                         <li>
-                            <i class="fas fa-headset"></i>
+                            <i class="fas fa-handshake"></i>
                             <div>
-                                <h5>24/7 Support</h5>
-                                <p>Dedicated account managers for your needs.</p>
+                                <h5>Long-Term Partnership Approach</h5>
+                                <p>We focus on building lasting relationships through reliability, responsiveness, and
+                                    trust—not one-time transactions.</p>
                             </div>
                         </li>
                     </ul>
@@ -255,21 +352,99 @@
     <section class="section bg-light marquee-section">
         <div class="container">
             <div class="section-header text-center">
-                <h4 class="sub-heading">Accreditations</h4>
+                <h2>Accreditations</h2>
             </div>
             <div class="marquee-track">
                 <!-- Repeated for effect in CSS/JS later, using placeholders -->
                 <div class="marquee-content">
-                    <span>ISO 9001</span>
-                    <span>FIEO</span>
-                    <span>APEDA</span>
-                    <span>Spices Board</span>
-                    <span>DGFT</span>
-                    <span>ISO 9001</span>
-                    <span>FIEO</span>
-                    <span>APEDA</span>
-                    <span>Spices Board</span>
-                    <span>DGFT</span>
+                    <img src="assets/images/gstlogo.png" alt="GST India">
+                    <img src="assets/images/msmelogo.png" alt="MSME Udhyam">
+                    <img src="assets/images/dgftlogo.png" alt="DGFT / IEC">
+                    <img src="assets/images/spicesboardlogo.png" alt="Spices Board India">
+                    <img src="assets/images/ficcilogo.png" alt="FICCI">
+                    <img src="assets/images/gccilogo.png" alt="GCCI">
+
+                    <img src="assets/images/udhyogadhaarlogo.png" alt="Udyog Aadhaar">
+                    <!-- Duplicate for loop -->
+                    <img src="assets/images/gstlogo.png" alt="GST India">
+                    <img src="assets/images/msmelogo.png" alt="MSME Udhyam">
+                    <img src="assets/images/dgftlogo.png" alt="DGFT / IEC">
+                    <img src="assets/images/spicesboardlogo.png" alt="Spices Board India">
+                    <img src="assets/images/ficcilogo.png" alt="FICCI">
+                    <img src="assets/images/gccilogo.png" alt="GCCI">
+
+                    <img src="assets/images/udhyogadhaarlogo.png" alt="Udyog Aadhaar">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header text-center">
+
+                <h2>Let's Discuss Your Logistics Solutions</h2>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info-card">
+                    <h3>Contact Information</h3>
+                    <p>Reach out to us for any inquiries or to get a quote. Our team is ready to assist you.</p>
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h5>Head Office</h5>
+                                <p>Shop No 4 KAPS Township, Unnamed road,<br>Nr Anumala Gate, Unchamala, Tapi, Gujarat -
+                                    394651</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h5>Phone</h5>
+                                <p><a href="tel:+91-87359-18360">+91-87359-18360</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h5>Email</h5>
+                                <p><a href="mailto:info@pravahainternational.com">info@pravahainternational.com</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h5>Working Hours</h5>
+                                <p>Mon - Sat: 9:00 AM - 7:00 PM (IST)</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact-form-card">
+                    <form id="contactForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Inquiry about..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="How can we help you?"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary full-width">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -280,7 +455,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="#" class="logo text-white">PRAVAHA<span class="dot text-gold">.</span></a>
+                    <a href="#" class="logo text-white">Pravaha International</a>
                     <p>Your trusted partner in global trade excellence. Connecting businesses with opportunities.</p>
                 </div>
                 <div class="footer-links">
@@ -294,17 +469,11 @@
                 </div>
                 <div class="footer-contact">
                     <h4>Contact Us</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Business Park, Mumbai, India</p>
-                    <p><i class="fas fa-phone"></i> +91 123 456 7890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Shop No 4 KAPS Township, Unchamala, Tapi, Gujarat</p>
+                    <p><i class="fas fa-phone"></i> +91-87359-18360</p>
                     <p><i class="fas fa-envelope"></i> info@pravahainternational.com</p>
                 </div>
-                <div class="footer-newsletter">
-                    <h4>Newsletter</h4>
-                    <form>
-                        <input type="email" placeholder="Your Email">
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                    </form>
-                </div>
+
             </div>
             <div class="footer-bottom text-center">
                 <p>&copy; 2024 Pravaha International. All Rights Reserved.</p>
@@ -313,6 +482,17 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'es,zh-CN,ar,fr,de,pt,ru,ja,ko',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>
